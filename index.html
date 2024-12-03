@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Clock</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+<script>
+var current = new Date();
+var hour = current.getHours();
+var bodyClass = "";
+	if (hour >= 4 && hour < 11) {
+        bodyClass = "morning";
+        imageSrc = "images/morning.png";
+    } else if (hour >= 11 && hour < 17) {
+        bodyClass = "noon";
+        imageSrc = "images/noon.png";
+    } else if (hour >= 17 && hour < 20) {
+        bodyClass = "evening";
+        imageSrc = "images/evening.png";
+    } else {
+        bodyClass = "night";
+        imageSrc = "images/night.png";
+		}
+
+document.body.className = bodyClass;
+
+var img = document.createElement("img");
+    img.className = "timepic";
+    img.src = imageSrc;
+    document.body.appendChild(img);
+</script>
+</body>
+</html>
